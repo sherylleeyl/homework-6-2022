@@ -42,8 +42,16 @@ document.querySelector("#faster").addEventListener("click", function(){
 
 document.querySelector("#skip").addEventListener("click", function(){
 	console.log("Original Location: " + video.currentTime)
-	video.currentTime += 15
-	console.log("New Location: " + video.currentTime)
+	
+	if (video.currentTime > 52) { 
+		video.currentTime = 0
+		video.currentTime += 15
+		console.log("New Location: " + video.currentTime)
+	}
+	else {
+		video.currentTime += 15
+		console.log("New Location: " + video.currentTime)
+	}
 
 });
 
